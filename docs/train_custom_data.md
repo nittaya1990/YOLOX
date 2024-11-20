@@ -41,7 +41,7 @@ ln -s /path/to/your/VOCdevkit ./datasets/VOCdevkit
 ## 2. Create your Exp file to control everything
 We put everything involved in a model to one single Exp file, including model setting, training setting, and testing setting.
 
-**A complete Exp file is at [yolox_base.py](https://github.com/Megvii-BaseDetection/YOLOX/blob/main/yolox/exp/base_exp.py).** It may be too long to write for every exp, but you can inherit the base Exp file and only overwrite the changed part.
+**A complete Exp file is at [yolox_base.py](https://github.com/Megvii-BaseDetection/YOLOX/blob/main/yolox/exp/yolox_base.py).** It may be too long to write for every exp, but you can inherit the base Exp file and only overwrite the changed part.
 
 Let's take the [VOC Exp file](https://github.com/Megvii-BaseDetection/YOLOX/blob/main/exps/example/yolox_voc/yolox_voc_s.py) as an example.
 
@@ -122,7 +122,7 @@ Generally, for small models, you should weak the aug, while for large models or 
     self.degrees = 10.0
     self.translate = 0.1
     self.scale = (0.1, 2)
-    self.mscale = (0.8, 1.6)
+    self.mosaic_scale = (0.8, 1.6)
     self.shear = 2.0
     self.perspective = 0.0
     self.enable_mixup = True
